@@ -46,7 +46,7 @@ const bacaData = (thisCallback) => {
           }
 
           let ambilData = JSON.parse(data);
-          let splitData = ambilData[0].message.split(" ");
+          let splitData = ambilData[0].data.message.split(" ");
           ArrData.push(splitData[1]);
 
 
