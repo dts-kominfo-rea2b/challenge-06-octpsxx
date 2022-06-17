@@ -28,7 +28,7 @@ const bacaData = (thisCallback) => {
       }
 
       let ambilData = JSON.parse(data);
-      let splitData = getData.message.split(" ");
+      let splitData = ambilData.message.split(" ");
       ArrData.push(splitData[1]);
 
       fs.readFile(file2, { encoding:"utf-8" }, (error,data) => {
@@ -37,17 +37,17 @@ const bacaData = (thisCallback) => {
         }
 
         let ambilData = JSON.parse(data);
-        let splitData = getData.message.split(" ");
-        ArrData.push(splitData[2]);
+        let splitData = ambilData[0].message.split(" ");
+        ArrData.push(splitData[1]);
 
-        fs.readFile(file2, { encoding:"utf-8" }, (error,data) => {
+        fs.readFile(file3, { encoding:"utf-8" }, (error,data) => {
           if (error){
             return thisCallback(error, null);
           }
 
           let ambilData = JSON.parse(data);
-          let splitData = getData.message.split(" ");
-          ArrData.push(splitData[3]);
+          let splitData = ambilData[0].message.split(" ");
+          ArrData.push(splitData[1]);
 
 
           return thisCallback(error,ArrData);
